@@ -201,7 +201,7 @@ export default function CommodityView() {
             <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-4">
               <div className="text-xs text-gray-500">Average</div>
               <div className="text-2xl font-bold text-gray-900">{statsAll.avg.toFixed(2)}</div>
-              <div className="text-gray-500 text-xs">BDT/kg</div>
+              <div className="text-gray-500 text-xs">{`BDT/${commodity.price[0].unit}`}</div>
             </div>
             <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-4">
               <div className="text-xs text-gray-500">24h Change</div>
@@ -213,12 +213,12 @@ export default function CommodityView() {
             <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-4">
               <div className="text-xs text-gray-500">High</div>
               <div className="text-2xl font-bold text-gray-900">{statsAll.max.toFixed(2)}</div>
-              <div className="text-gray-500 text-xs">BDT/kg</div>
+              <div className="text-gray-500 text-xs">{`BDT/${commodity.price[0].unit}`}</div>
             </div>
             <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-4">
               <div className="text-xs text-gray-500">Low</div>
               <div className="text-2xl font-bold text-gray-900">{statsAll.min.toFixed(2)}</div>
-              <div className="text-gray-500 text-xs">BDT/kg</div>
+              <div className="text-gray-500 text-xs">{`BDT/${commodity.price[0].unit}`}</div>
             </div>
           </div>
         </div>
@@ -255,8 +255,8 @@ export default function CommodityView() {
                 <thead>
                   <tr className="text-left text-gray-500">
                     <th className="py-2 pr-4">Date</th>
-                    <th className="py-2 pr-4">Rate (BDT/kg)</th>
-                    <th className="py-2">Δ</th>
+                    <th className="py-2 pr-4">{`Rate (BDT/${commodity.price[0].unit})`}</th>
+                    <th className="py-2">Ratio</th>
                   </tr>
                 </thead>
                 <tbody>

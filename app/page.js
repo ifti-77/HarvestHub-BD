@@ -89,12 +89,18 @@ export default function Home() {
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4">
                 {(() => {
-                  const filteredCommodities =
+                  let filteredCommodities =
                     divisonValue !== ""
-                      ? commodites.filter((c) => c.division === divisonValue).slice(0,showAllCommodities?commodites.length:(maxCount+1))
-                      : (!showAllCommodities?commodites.slice(0, 6): commodites);
+                      ? commodites.filter((c) => c.division === divisonValue ).slice(0,showAllCommodities?commodites.length:6)
+                      : (!showAllCommodities?commodites.slice(0, 6): commodites)
 
-                  if (divisonValue !== "" && filteredCommodities.length === 0) {
+                      // divisonValue !== ""
+                      // ? (searchItem.ItemName===""?commodites.filter((c) => c.division === divisonValue ).slice(0,showAllCommodities?commodites.length:(6)):
+                      //   commodites.filter((c) => c.division === divisonValue && c.name.match(new RegExp(searchItem.ItemName,'i'))).slice(0,showAllCommodities?commodites.length:(maxCount+1)))
+                      // : (!showAllCommodities?commodites.slice(0, 6): commodites)
+
+                    filteredCommodities = searchItem.ItemName!==''? filteredCommodities.filter((fc)=>fc.name.match(new RegExp(searchItem.ItemName,'i'))): filteredCommodities
+                      if (divisonValue !== "" && filteredCommodities.length === 0) {
                     return (
                       <p className="col-span-full text-gray-500 text-center py-10">
                         No commodities found for <span className="font-semibold">{divisonValue}</span>.
@@ -108,7 +114,7 @@ export default function Home() {
                         {filteredCommodities.map((commodity, index) => (
                           <Commodity key={index} itemDetails={commodity} />
                         ))}
-                        {filteredCommodities.length > maxCount && (
+                        {filteredCommodities.length > 6 && (
                           <div className="col-span-full flex justify-center">
                             <button onClick={() => setshowAllCommodities(!showAllCommodities)}>
                               <span className="text-blue-600 mt-2 text-sm cursor-pointer py-1 px-4 border border-blue-200 rounded-full bg-blue-50 hover:bg-blue-100 transition">

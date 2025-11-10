@@ -10,7 +10,7 @@ function AdminDashboard() {
   const [commodity, setCommodity] = useState({
     name: "",
     division: "",
-    price: [{ date: today, rate: 0, unit: "" }],
+    price: [{ date: today, rate: '', unit: "" }],
     updatedDate: today,
   })
   const [commodities, setCommodities] = useState([])
@@ -85,7 +85,7 @@ function AdminDashboard() {
         <>
           <form className='flex flex-wrap items-center gap-3 justify-center p-6 bg-white rounded-xl shadow-md border border-gray-100'
             onSubmit={handleCommoditySubmit}>
-            <input type='text' placeholder='name' name='name' onChange={handleCommodityInputs} value={commodity.name}
+            <input type='text' placeholder='Item-Name' name='name' onChange={handleCommodityInputs} value={commodity.name}
               className='w-44 px-3 py-2 border rounded-md shadow-sm text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm' />
             <select name='division' onChange={handleCommodityInputs}
               className='w-44 px-3 py-2 border rounded-md shadow-sm bg-white text-indigo-500 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500'>
@@ -119,7 +119,7 @@ function AdminDashboard() {
               <option value="jar">Jar</option>
               <option value="sachet">Sachet</option>
             </select>
-            <input type='number' placeholder='price' name='price' onChange={handleCommodityInputs} value={commodity.price[commodity.price.length - 1].rate}
+            <input type='number' min={1} placeholder='Price-BDT' name='price' onChange={handleCommodityInputs} value={commodity.price[commodity.price.length - 1].rate}
               className='w-36 px-3 py-2 border rounded-md shadow-sm text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm' />
             <button type='submit'
               className='ml-2 inline-flex items-center gap-2 bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700 transition'>
