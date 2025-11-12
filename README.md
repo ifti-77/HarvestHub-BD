@@ -6,7 +6,7 @@ HarvestHub‑BD is a modern commodity price dashboard for Bangladesh.  It helps 
 
 ## Why HarvestHub‑BD?
 
-Food prices in Bangladesh have been highly volatile; food inflation reached **14.10 % in July 2024** and remained around **7.08 % in October 2025**【754421454029421†L140-L144】.  Having easy access to reliable commodity prices can empower farmers and consumers to make informed decisions, reduce uncertainty and encourage more transparent markets.  HarvestHub‑BD was built with these goals in mind.
+Food prices in Bangladesh have been highly volatile; food inflation reached **14.10 % in July 2024** and remained around **7.08 % in October 2025**【[tradingeconomics.com](https://tinyurl.com/5xdbvcf7)】.  Having easy access to reliable commodity prices can empower farmers and consumers to make informed decisions, reduce uncertainty and encourage more transparent markets.  HarvestHub‑BD was built with these goals in mind.
 
 ## Features
 
